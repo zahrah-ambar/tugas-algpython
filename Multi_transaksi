@@ -1,0 +1,69 @@
+tambah="y"
+while tambah=="y":
+        
+    print("")
+    print("========================================")
+    print(" DAFTAR MENU ")
+    print("========================================")
+    print(" Menu Makanan ")
+    print("========================================")
+    print(" a = NASI GORENG         Rp 15.000")
+    print(" b = LONTONG GORENG      Rp 14.900")
+    print(" c = BAKSO GORENG        Rp 12.900")
+    print(" d = RUJAK GORENG        Rp 13.000")
+    print(" e = RUJAK BAKSO         Rp 15.000")
+    print(" f = RUJAK BAKSO PECEL   Rp 17.000")
+    print("========================================")
+    print(" Menu Minuman ")
+    print("========================================")
+    print(" a = TEH DINGIN/PANAS   Rp 2.500")
+    print(" b = KOPI DINGIN        Rp 5.000")
+    print(" c = KOPI PANAS         Rp 6.500")
+    print(" d = COCA COLA DINGIN   Rp 3.500")
+    print(" e = COCA COLA DINGIN   Rp 5.000")
+    print("========================================")
+    print("")
+
+    kodema =['a','b','c','d','e','f']
+    namama = ['NASI GORENG','LONTONG GORENG', 'BAKSO GORENG','RUJAK GORENG','RUJAK BAKSO','RUJAK BAKSO PECEL']
+    hargama = [15000,14900,12900,13000,15000,17000]
+    kodemi =['a','b','c','d','e']
+    namami = ['TEH DINGIN/PANAS','KOPI DINGIN','KOPI PANAS','COCA COLA DINGIN','COCA COLA DINGIN']
+    hargami = [2500,5000,6500,3500,5000]
+
+    pilma = input(">> Masukkan Kode makanan  = ")
+    qtyma = input(">> Jumlah Makanan         = ")
+    pilmi = input(">> Masukkan Kode minuman  = ")
+    qtymi = input(">> Jumlah Minuman         = ")
+    
+    i = 0
+    while i<len (namama) and i<len (namami):
+        if kodema[i] == pilma and kodemi[i] == pilmi:
+            namamak = namama[i] 
+            namamin = namami[i]
+            hrgsatma = hargama[i] 
+            hrgsatmi = hargami[i]
+        i+=1
+        
+        tot_mak = hrgsatma * int(qtyma) 
+        tot_min = hrgsatmi * int(qtymi) 
+        tot_byr = tot_mak + tot_min
+    
+    print(("----------------------------------------"))
+    print(">>> NAMA MAKANAN      : " + namamak)
+    print(">>> JUMLAH            : " + qtyma)
+    print(">>> HARGA MAKANAN     : Rp " + str(tot_mak))
+    print(">>> NAMA MINUMAN      : " + namamin)
+    print(">>> JUMLAH            : "+ qtymi)
+    print(">>> HARGA MINUMAN     : Rp "+ str(tot_min))
+    print(("----------------------------------------"))
+    print(">>> TOTAL BAYAR       : Rp " + str(tot_byr))
+    
+    bayar= int (input(">>> BAYAR             : Rp "))
+    kembalian= bayar - int(tot_byr)
+    print(">>> KEMBALIAN         : Rp "+ str(kembalian))
+    
+    tambah=input("Pesan lagi (y/t)? ")
+    if tambah=="t":
+        print("Terima Kasih Telah Berbelanja")
+        break
